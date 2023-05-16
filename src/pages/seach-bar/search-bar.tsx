@@ -4,7 +4,7 @@ type TSearchBarProps = {
     triggerSearch: (value: string) => Promise<void>
 }
 
-export const SearchBar = ({triggerSearch}: TSearchBarProps) => {
+const SearchBar = ({triggerSearch}: TSearchBarProps) => {
     const [searchValue, setSearchValue] = useState<string>('');
 
     const handleSearchOnClick = () => triggerSearch(searchValue);
@@ -16,3 +16,5 @@ export const SearchBar = ({triggerSearch}: TSearchBarProps) => {
         </div>
     );
 }
+
+export default SearchBar;

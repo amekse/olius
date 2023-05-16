@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import { SearchBar } from "../seach-bar/search-bar";
+import SearchBar from "../seach-bar/search-bar";
 import { fetchGistByUsername, uiCombinedDataSchema } from '../../schematics/gistApiResults';
-import { GistTab } from "../gist-tab/gist-tab";
+import GistTab from "../gist-tab/gist-tab";
 
-export const Home = () => {
+const Home = () => {
     const [gistList, setGistList] = useState<uiCombinedDataSchema[]>([]);
     const [loading, setLoadingStatus] = useState<boolean>(false);
     const triggerSearch = async (usename: string) => {
@@ -24,3 +24,5 @@ export const Home = () => {
         </div>
     );
 }
+
+export default Home;

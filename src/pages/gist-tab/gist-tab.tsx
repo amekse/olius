@@ -5,7 +5,7 @@ type TGistTabProps = {
     item: uiCombinedDataSchema
 }
 
-export const GistTab = ({item}:TGistTabProps) => {
+const GistTab = ({item}:TGistTabProps) => {
     const FileTab = ({file}: {file: filesUiDataSchema}) => {
         return (
             <div className="flex flex-col justify-start items-start">
@@ -26,14 +26,14 @@ export const GistTab = ({item}:TGistTabProps) => {
             </div>
         )
     };
-
+    console.log(item === undefined)
     return (
         <div className="border-2 p-2 border-white rounded w-full text-white flex flex-col justify-start items-start mt-4">
             <div>
-                {item.files.map((file, index) => <FileTab key={`${index}${file.filename}`} file={file} />)}
+                {item?.files.map((file, index) => <FileTab key={`${index}${file.filename}`} file={file} />) || <span>No Data</span>}
             </div>
             {
-                item.forks.length > 0 ?
+                (item?.forks.length || 0) > 0 ?
                 <div className="flex flex-row justify-start items-center mt-2">
                     Forks:
                     {item.forks.map((fork, index) => (index < 3) ? <ForkTab key={`${index}${fork.username}`} fork={fork} /> : null)}
@@ -42,3 +42,5 @@ export const GistTab = ({item}:TGistTabProps) => {
         </div>
     )
 }
+
+export default GistTab;
