@@ -26,7 +26,7 @@ const GistTab = ({item}:TGistTabProps) => {
             </div>
         )
     };
-    console.log(item === undefined)
+    
     return (
         <div className="border-2 p-2 border-white rounded w-full text-white flex flex-col justify-start items-start mt-4">
             <div>
@@ -37,7 +37,7 @@ const GistTab = ({item}:TGistTabProps) => {
                 <div className="flex flex-row justify-start items-center mt-2">
                     Forks:
                     {item.forks.map((fork, index) => (index < 3) ? <ForkTab key={`${index}${fork.username}`} fork={fork} /> : null)}
-                </div> : null
+                </div> : <span className="font-thin text-xs">0 Forks</span>
             }
         </div>
     )
