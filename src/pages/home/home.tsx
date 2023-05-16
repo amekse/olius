@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import { SearchBar } from "../seach-bar/search-bar";
-import { fetchGistByUsername } from '../../schematics/gistApiResults';
+import { fetchGistByUsername, uiCombinedDataSchema } from '../../schematics/gistApiResults';
 
 export const Home = () => {
-    const [gistList, setGistList] = useState<object>([]);
+    const [gistList, setGistList] = useState<uiCombinedDataSchema[]>([]);
     const triggerSearch = async (usename: string) => {
         setGistList(await fetchGistByUsername(usename));
     };
@@ -11,7 +11,11 @@ export const Home = () => {
     return (
         <div className="bg-slate-900 w-screen h-screen p-8 flex flex-col justify-start items-center">
             <SearchBar triggerSearch={triggerSearch} />
-            {JSON.stringify(gistList)}
+            <div className="bg-white">
+                {gistList.map((item: uiCombinedDataSchema):any => (<div key={item.id}>
+                    {JSON.stringify(item)}
+                </div>))}
+            </div>
         </div>
     );
 }
