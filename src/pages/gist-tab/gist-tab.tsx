@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { uiCombinedDataSchema, filesUiDataSchema, forksUiDataSchema } from '../../schematics/gistApiResults';
 
 type TGistTabProps = {
@@ -6,7 +6,6 @@ type TGistTabProps = {
 }
 
 const GistTab = ({item}:TGistTabProps) => {
-    console.log(item);
     const FileTab = ({file}: {file: filesUiDataSchema}) => {
         return (
             <div className="flex flex-col justify-start items-start">

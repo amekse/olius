@@ -39,28 +39,25 @@ export type gistApiDataSchema = {
     }
 }
 
-const fetchForkByUrl = async(forkUrl:string, callback: (forkDetails:forksUiDataSchema[]) => void) => {
+const fetchForkByUrl = async(forkUrl:string) => {
     const forkDetails = await fetchForkList(forkUrl);
-    callback(forkDetails.map(fork => {
+    return forkDetails.map(fork => {
         return {
             avatar: fork.owner.avatar_url,
             username: fork.owner.login,
             user_profile_link: fork.owner.html_url
         }
-    }));
+    });
 }
 
 export const fetchGistByUsername = async(username: string): Promise<uiCombinedDataSchema[]> => {
     const userGistListRaw = await fetchUsenameList(username);
-    return userGistListRaw.map(item => {
+    return await Promise.all(userGistListRaw.map(async(item) => {
         const returnableData: uiCombinedDataSchema = {
             id: item.id,
             files: [],
-            forks: []
+            forks: await fetchForkByUrl(item.forks_url)
         };
-        fetchForkByUrl(item.forks_url, (forkDetails) => {
-            returnableData.forks = forkDetails
-        });
         returnableData.files = Object.keys(item.files).map((fileName:string) => {
             const filePrintableName = item.files[fileName].filename.split('.');
             return {
@@ -71,5 +68,5 @@ export const fetchGistByUsername = async(username: string): Promise<uiCombinedDa
             }
         });
         return returnableData;
-    });
+    }));
 }

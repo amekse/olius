@@ -2,7 +2,7 @@ import axios from "axios";
 import { gistApiDataSchema, forksApiDataScheme } from '../schematics/gistApiResults';
 
 const axiosConfig = { headers: {
-    'Authorization': 'Bearer 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', 
+    'Authorization': 'Bearer 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', 
     'Accept': 'application/vnd.github+json',
     'X-GitHub-Api-Version': '2022-11-28'
 }}
