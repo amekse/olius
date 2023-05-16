@@ -6,6 +6,7 @@ type TGistTabProps = {
 }
 
 const GistTab = ({item}:TGistTabProps) => {
+    console.log(item);
     const FileTab = ({file}: {file: filesUiDataSchema}) => {
         return (
             <div className="flex flex-col justify-start items-start">
