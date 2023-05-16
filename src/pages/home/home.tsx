@@ -16,7 +16,7 @@ const Home = () => {
         <div className="bg-slate-900 w-screen h-screen p-8 flex flex-col justify-start items-center">
             <SearchBar triggerSearch={triggerSearch} />
             {
-                loading ? <img src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" className="m-8" width={20} height={20} /> : null
+                loading ? <img alt="Loading" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" className="m-8" width={20} height={20} /> : null
             }
             <div className="w-5/6 h-5/6 mt-8 overflow-auto">
                 {gistList.map((item: uiCombinedDataSchema, index) => <GistTab key={`${index}${item.id}`} item={item} />)}
