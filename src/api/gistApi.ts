@@ -1,10 +1,16 @@
 import axios from "axios";
 import { gistApiDataSchema, forksApiDataScheme } from '../schematics/gistApiResults';
 
+const axiosConfig = { headers: {
+    'Authorization': 'Bearer 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', 
+    'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28'
+}}
+
 export const fetchForkList = async(forkUrl: string): Promise<forksApiDataScheme[]> => {
     let res: {data?: forksApiDataScheme[]} = {};
     try {
-        res = await axios.get(forkUrl);
+        res = await axios.get(forkUrl, axiosConfig);
     } catch (err) {
         console.log(err);
     } finally {
@@ -15,7 +21,7 @@ export const fetchForkList = async(forkUrl: string): Promise<forksApiDataScheme[
 export const fetchUsenameList = async(username: string): Promise<gistApiDataSchema[]> => {
     let res: {data?: gistApiDataSchema[]} = {};
     try {
-        res = await axios.get(`https://api.github.com/users/${username}/gists`);
+        res = await axios.get(`https://api.github.com/users/${username}/gists`, axiosConfig);
     } catch (err) {
         console.log(err);
     } finally {

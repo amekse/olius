@@ -41,13 +41,13 @@ export type gistApiDataSchema = {
 
 const fetchForkByUrl = async(forkUrl:string, callback: (forkDetails:forksUiDataSchema[]) => void) => {
     const forkDetails = await fetchForkList(forkUrl);
-    return forkDetails.map(fork => {
+    callback(forkDetails.map(fork => {
         return {
             avatar: fork.owner.avatar_url,
             username: fork.owner.login,
             user_profile_link: fork.owner.html_url
         }
-    });
+    }));
 }
 
 export const fetchGistByUsername = async(username: string): Promise<uiCombinedDataSchema[]> => {

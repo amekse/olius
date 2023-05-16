@@ -1,0 +1,42 @@
+[
+    {
+      "url": "https://api.github.com/gists/bed70db1accfe61bc6607e2b274becf1",
+      "forks_url": "https://api.github.com/gists/bed70db1accfe61bc6607e2b274becf1/forks",
+      "commits_url": "https://api.github.com/gists/bed70db1accfe61bc6607e2b274becf1/commits",
+      "id": "bed70db1accfe61bc6607e2b274becf1",
+      "node_id": "G_kwDOAuC1zdoAIGJlZDcwZGIxYWNjZmU2MWJjNjYwN2UyYjI3NGJlY2Yx",
+      "git_pull_url": "https://gist.github.com/bed70db1accfe61bc6607e2b274becf1.git",
+      "git_push_url": "https://gist.github.com/bed70db1accfe61bc6607e2b274becf1.git",
+      "html_url": "https://gist.github.com/WahidinAji/bed70db1accfe61bc6607e2b274becf1",
+      "files": {
+  
+      },
+      "public": true,
+      "created_at": "2023-05-15T10:19:53Z",
+      "updated_at": "2023-05-15T10:19:53Z",
+      "description": "Implementation of parameterized sql queries using string interpolation handlers",
+      "comments": 0,
+      "user": null,
+      "comments_url": "https://api.github.com/gists/bed70db1accfe61bc6607e2b274becf1/comments",
+      "owner": {
+        "login": "WahidinAji",
+        "id": 48281037,
+        "node_id": "MDQ6VXNlcjQ4MjgxMDM3",
+        "avatar_url": "https://avatars.githubusercontent.com/u/48281037?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/WahidinAji",
+        "html_url": "https://github.com/WahidinAji",
+        "followers_url": "https://api.github.com/users/WahidinAji/followers",
+        "following_url": "https://api.github.com/users/WahidinAji/following{/other_user}",
+        "gists_url": "https://api.github.com/users/WahidinAji/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/WahidinAji/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/WahidinAji/subscriptions",
+        "organizations_url": "https://api.github.com/users/WahidinAji/orgs",
+        "repos_url": "https://api.github.com/users/WahidinAji/repos",
+        "events_url": "https://api.github.com/users/WahidinAji/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/WahidinAji/received_events",
+        "type": "User",
+        "site_admin": false
+      }
+    }
+  ]
