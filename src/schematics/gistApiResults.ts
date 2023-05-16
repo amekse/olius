@@ -1,12 +1,12 @@
 import { fetchUsenameList, fetchForkList } from '../api/gistApi';
 
-type forksUiDataSchema = {
+export type forksUiDataSchema = {
     avatar: string,
     username: string,
     user_profile_link: string
 }
 
-type filesUiDataSchema = {
+export type filesUiDataSchema = {
     filename: string,
     tags: string,
     lang_type: string,
